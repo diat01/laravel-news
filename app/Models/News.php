@@ -14,11 +14,11 @@ class News extends Model
         'name',
         'description',
         'image',
-        'user_id',
+        'author_id',
     ];
 
-    public function user()
+    public function author(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'author_id');
     }
 }
