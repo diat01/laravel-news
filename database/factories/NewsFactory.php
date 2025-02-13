@@ -19,8 +19,8 @@ class NewsFactory extends Factory
         return [
             'name'        => $this->faker->sentence(3),
             'description' => $this->faker->paragraph(5),
-            'image'       => $this->faker->imageUrl(640, 480, 'news', true),
-            'user_id'     => \App\Models\User::factory(),
+            'image'       => "https://dummyimage.com/300/ffffff/000000",
+            'author_id'     => \App\Models\User::factory(),
         ];
     }
 }
