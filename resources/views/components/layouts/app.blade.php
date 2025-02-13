@@ -1,8 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -21,7 +21,7 @@
 <body>
 <div id="app">
     <!-- Header -->
-   <x-partials.header/>
+    <x-partials.header/>
 
     <!-- Main Content -->
     <main class="py-4">
@@ -31,6 +31,6 @@
     <!-- Footer -->
     <x-partials.footer/>
 </div>
- @livewireScripts
+@livewireScripts
 </body>
 </html>
