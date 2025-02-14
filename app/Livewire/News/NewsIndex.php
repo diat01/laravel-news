@@ -12,7 +12,7 @@ class NewsIndex extends Component
 
     public function render()
     {
-        $news = News::with('author')->latest()->paginate(4);
+        $news = News::select(["id", "name", "image", "created_at"])->latest()->paginate(4);
         return view('livewire.news.index', [
             'news' => $news,
         ]);
