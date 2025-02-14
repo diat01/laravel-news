@@ -1,5 +1,5 @@
 <div class="container py-4">
-    <img src="{{ asset($news->image) }}" class="img-fluid mb-4 mx-auto d-block rounded" alt="{{ $news->name }}">
+    <img src="{{ asset('storage/' . $news->image) }}" class="img-fluid mb-4 mx-auto d-block rounded" alt="{{ $news->name }}">
     <h1 class="text-center mb-4">{{ $news->name }}</h1>
     <h4 class="text-body-secondary mb-4">{{ __('Author:') . ' ' . $news->author->name }}</h4>
     <hr class="border-top border-3 border-dark">

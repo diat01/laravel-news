@@ -3,7 +3,7 @@
         @foreach($news as $item)
             <div class="col-md-3 mb-4">
                 <div class="card h-100">
-                    <img src="{{ asset($item->image) }}" class="card-img-top" alt="{{ $item->title }}">
+                    <img src="{{ asset('storage/' . $item->image) }}" class="card-img-top" alt="{{ $item->title }}">
                     <div class="card-body">
                         <h5 class="card-title">{{ $item->name }}</h5>
                     </div>
