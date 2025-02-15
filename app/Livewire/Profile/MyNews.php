@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\News;
-use Illuminate\Support\Facades\Auth;
 use Livewire\WithFileUploads;
 
 class MyNews extends Component
@@ -30,7 +29,7 @@ class MyNews extends Component
         $imagePath = $this->image->store('news', 'public');
 
         News::create([
-            'author_id'   => Auth::id(),
+            'author_id'   => auth()->id(),
             'name'        => $this->name,
             'description' => $this->description,
             'image'       => $imagePath, // Store the image path in the DB
