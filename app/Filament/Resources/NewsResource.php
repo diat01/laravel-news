@@ -23,7 +23,7 @@ class NewsResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\FileUpload::make("image")->image()->required(),
+                Forms\Components\FileUpload::make("image")->image()->required()->directory('news'),
                 Forms\Components\TextInput::make("name")->label(__("Name"))->required(),
                 Forms\Components\RichEditor::make("description")->columnSpanFull()->label(__("Description"))->required(),
             ]);
