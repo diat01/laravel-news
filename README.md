@@ -1,6 +1,8 @@
 # Laravel News Project
 
-This is a Laravel project designed to demonstrate the integration of **Filament** as an admin panel and **L5-Swagger** for API documentation. It includes RESTful APIs, a modern admin interface, and a pre-configured database schema for quick setup.
+This is a Laravel project designed to demonstrate the integration of **Filament** as an admin panel and **L5-Swagger**
+for API documentation. It includes RESTful APIs, a modern admin interface, and a pre-configured database schema for
+quick setup.
 
 ---
 
@@ -17,7 +19,8 @@ This is a Laravel project designed to demonstrate the integration of **Filament*
 ## Features
 
 - **Admin Panel**: Built with [Filament](https://filamentphp.com/), a modern admin panel for Laravel.
-- **API Documentation**: Powered by [L5-Swagger](https://github.com/DarkaOnLine/L5-Swagger), which provides Swagger UI for API documentation.
+- **API Documentation**: Powered by [L5-Swagger](https://github.com/DarkaOnLine/L5-Swagger), which provides Swagger UI
+  for API documentation.
 - **RESTful APIs**: Fully documented and ready for integration.
 - **Database Migrations**: Predefined database schema with migrations.
 
@@ -75,6 +78,12 @@ This is a Laravel project designed to demonstrate the integration of **Filament*
    Create the tables and run the seeds by running the following command:
    ```bash
    php artisan migrate --seed
+   ```
+
+7. **Create Storage Link**:
+   Create a symbolic link from public/storage to storage/app/public to make uploaded files accessible:
+   ```bash
+   php artisan storage:link
    ```
 
 ---
