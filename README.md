@@ -95,11 +95,11 @@ Filament provides a modern and intuitive admin panel for managing your applicati
 1. **Predefined Admin Users**:
    We have already created two admin users for testing purposes. You can use the following credentials to log in:
     - **Super Admin**:
-        - Email: `superadmin@example.com`
+        - Email: `superadmin@news.com`
         - Password: `password`
 
     - **Content Manager**:
-        - Email: `contentmanager@example.com`
+        - Email: `contentmanager@news.com`
         - Password: `password`
 
 2. **Log in to the Admin Panel**:
