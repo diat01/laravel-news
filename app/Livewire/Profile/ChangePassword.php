@@ -3,7 +3,6 @@
 namespace App\Livewire\Profile;
 
 use Livewire\Component;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Attributes\On;
 
@@ -30,7 +29,7 @@ class ChangePassword extends Component
     {
         $this->validate();
 
-        $user = Auth::user();
+        $user = auth()->user();
 
         if (!Hash::check($this->current_password, $user->password)) {
             $this->errorMessage = 'The current password is incorrect!';
