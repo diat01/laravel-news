@@ -1,0 +1,174 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Laravel News API Documentation",
+        "description": "Swagger doc for Laravel News",
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000",
+            "description": "Laravel News API Server"
+        }
+    ],
+    "paths": {
+        "/api/news": {
+            "get": {
+                "tags": [
+                    "News"
+                ],
+                "summary": "Get all news paginated",
+                "operationId": "5611792c58bd5803e23cd30ea2024d0b",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/page"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": "true"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "data": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "$ref": "#/components/schemas/NewsDataResource"
+                                                        },
+                                                        "collectionFormat": "multi"
+                                                    },
+                                                    "current_page": {
+                                                        "type": "integer"
+                                                    },
+                                                    "first_page_url": {
+                                                        "type": "string"
+                                                    },
+                                                    "from": {
+                                                        "type": "integer"
+                                                    },
+                                                    "last_page": {
+                                                        "type": "integer"
+                                                    },
+                                                    "last_page_url": {
+                                                        "type": "string"
+                                                    },
+                                                    "next_page_url": {
+                                                        "type": "string"
+                                                    },
+                                                    "path": {
+                                                        "type": "string"
+                                                    },
+                                                    "per_page": {
+                                                        "type": "integer"
+                                                    },
+                                                    "prev_page_url": {
+                                                        "type": "string"
+                                                    },
+                                                    "to": {
+                                                        "type": "integer"
+                                                    },
+                                                    "total": {
+                                                        "type": "integer"
+                                                    },
+                                                    "links": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "$ref": "#/components/schemas/pagination_links"
+                                                        },
+                                                        "collectionFormat": "multi"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "collectionFormat": "multi"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "pagination_links": {
+                "description": "Pagination links",
+                "properties": {
+                    "url": {
+                        "type": "string"
+                    },
+                    "label": {
+                        "type": "string"
+                    },
+                    "active": {
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
+            "NewsDataResource": {
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "name": {
+                        "type": "string",
+                        "example": "Name"
+                    },
+                    "description": {
+                        "type": "string",
+                        "example": "Description"
+                    },
+                    "image": {
+                        "type": "string",
+                        "example": "Url of image"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "parameters": {
+            "per_page": {
+                "name": "per_page",
+                "in": "query",
+                "description": "Per page number for pagination",
+                "schema": {
+                    "type": "int",
+                    "default": 15
+                }
+            },
+            "page": {
+                "name": "page",
+                "in": "query",
+                "description": "Page number for pagination",
+                "schema": {
+                    "type": "int",
+                    "default": 1
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "News",
+            "description": "News"
+        }
+    ]
+}
