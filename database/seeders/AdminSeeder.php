@@ -15,15 +15,15 @@ class AdminSeeder extends Seeder
     {
         Admin::create([
             'role'     => 'superadmin',
-            'name'     => 'Admin User',
-            'email'    => 'admin@news.com',
+            'name'     => 'Super Admin',
+            'email'    => 'superadmin@example.com',
             'password' => bcrypt('password'),
         ]);
 
-         Admin::create([
+        Admin::create([
             'role'     => 'content manager',
-            'name'     => 'Content User',
-            'email'    => 'content@news.com',
+            'name'     => 'Content Manager',
+            'email'    => 'contentmanager@example.com',
             'password' => bcrypt('password'),
         ]);
     }
