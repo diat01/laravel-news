@@ -82,7 +82,7 @@
                                 <td>{{ $item->description }}</td>
                                 <td>
                                     @if($item->image)
-                                        <img src="{{ asset('storage/' . $item->image) }}" width="100" alt=""/>
+                                        <img src="{{ $item->image != '' ? asset('storage/' . $item->image) : asset('thumbnails/300x300.png') }}" width="100" alt=""/>
                                     @else
                                         {{ __('No image') }}
                                     @endif

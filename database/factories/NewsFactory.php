@@ -19,7 +19,7 @@ class NewsFactory extends Factory
         return [
             'name'        => $this->faker->sentence(3),
             'description' => $this->faker->paragraph(50),
-            'image'       => 'thumbnails/300x300.png',
+            'image'       => '',
             'author_id'   => \App\Models\User::factory(),
         ];
     }

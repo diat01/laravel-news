@@ -1,7 +1,8 @@
 <div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6">
-            <img src="{{ asset('storage/' . $news->image) }}" class="img-fluid mb-4 mx-auto d-block rounded" alt="{{ $news->name }}">
+            <img src="{{ $news->image != '' ? asset('storage/' . $news->image) : asset('thumbnails/300x300.png') }}"
+                 class="img-fluid mb-4 mx-auto d-block rounded" alt="{{ $news->name }}">
         </div>
     </div>
 
