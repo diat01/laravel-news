@@ -19,5 +19,12 @@ class AdminSeeder extends Seeder
             'email'    => 'admin@news.com',
             'password' => bcrypt('password'),
         ]);
+
+         Admin::create([
+            'role'     => 'content manager',
+            'name'     => 'Content User',
+            'email'    => 'content@news.com',
+            'password' => bcrypt('password'),
+        ]);
     }
 }
