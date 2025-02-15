@@ -13,21 +13,18 @@ class ChangePassword extends Component
     public $new_password;
     public $new_password_confirmation;
 
-    public string $message = '';  // Success message
-    public string $errorMessage = '';  // Error message
+    public string $message = '';
+    public string $errorMessage = '';
 
-    // Validation rules
     protected function rules(): array
     {
         return [
             'current_password'          => 'required|string',
             'new_password'              => 'required|string|min:8|different:current_password',
-            // Ensure new password is not the same as the old one
-            'new_password_confirmation' => 'required|same:new_password',  // Ensure confirmation matches new password
+            'new_password_confirmation' => 'required|same:new_password',
         ];
     }
 
-    // Handle password change
     #[On('changePassword')]
     public function changePassword()
     {
@@ -35,23 +32,20 @@ class ChangePassword extends Component
 
         $user = Auth::user();
 
-        // Check if the current password is correct
         if (!Hash::check($this->current_password, $user->password)) {
             $this->errorMessage = 'The current password is incorrect!';
-            $this->message = '';  // Clear success message when error occurs
+            $this->message = '';
             return;
         }
 
-        // Update the password if current one is correct
         $user->password = Hash::make($this->new_password);
         $user->save();
 
         $this->message = 'Your password has been successfully changed!';
-        $this->errorMessage = '';  // Clear error message on success
+        $this->errorMessage = '';
         $this->resetForm();
     }
 
-    // Reset form fields after successful password change
     private function resetForm()
     {
         $this->current_password = '';
