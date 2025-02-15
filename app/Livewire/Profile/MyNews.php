@@ -14,14 +14,12 @@ class MyNews extends Component
 
     public $name, $description, $id, $image;
 
-    // Validation rules for creating news
     protected $rules = [
         'name'        => 'required|string|max:255',
         'description' => 'required|string',
         'image'       => 'nullable|image|max:2048',
     ];
 
-    // Store or Update News
     public function create()
     {
         $this->validate();
@@ -32,14 +30,13 @@ class MyNews extends Component
             'author_id'   => auth()->id(),
             'name'        => $this->name,
             'description' => $this->description,
-            'image'       => $imagePath, // Store the image path in the DB
+            'image'       => $imagePath,
         ]);
 
         session()->flash('message', 'News created successfully.');
         $this->resetInputFields();
     }
 
-    // Method to delete a news item
     public function delete($id)
     {
         $news = News::findOrFail($id);
