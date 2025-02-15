@@ -62,7 +62,7 @@ class MyNews extends Component
 
     public function render()
     {
-        $news = News::where('author_id', Auth::id())->latest()->paginate(10);
+        $news = News::where('author_id', auth()->id())->latest()->paginate(10);
 
         return view('livewire.profile.my-news', compact('news'));
     }
